@@ -1,5 +1,6 @@
 import datetime
 
+
 class Chicken:
     def __init__(self, name, breed, date_of_birth):
         self.name = name
@@ -13,6 +14,7 @@ class Chicken:
 
     def update_health_status(self, status):
         self.health_status = status
+
 
 class Farm:
     def __init__(self, name):
@@ -73,21 +75,53 @@ class Farm:
         with open(self.log_file, "a") as file:
             file.write(log_message)
 
-# Example usage
+
+# Main program
 farm = Farm("My Farm")
 
-chicken1 = Chicken("Henrietta", "Rhode Island Red", "2022-01-01")
-chicken2 = Chicken("Clucky", "White Leghorn", "2022-02-15")
+while True:
+    print("=== Farm Management System ===")
+    print("1. Add Chicken")
+    print("2. Remove Chicken")
+    print("3. Collect Eggs")
+    print("4. Generate Health Report")
+    print("5. Feed Chickens")
+    print("6. Exit")
 
-farm.add_chicken(chicken1)
-farm.add_chicken(chicken2)
+    choice = input("Enter your choice: ")
 
-chicken1.lay_egg()
-chicken1.lay_egg()
-chicken2.lay_egg()
+    if choice == "1":
+        name = input("Enter chicken name: ")
+        breed = input("Enter chicken breed: ")
+        date_of_birth = input("Enter chicken's date of birth (YYYY-MM-DD): ")
+        chicken = Chicken(name, breed, date_of_birth)
+        farm.add_chicken(chicken)
+        print("Chicken added successfully.")
 
-print("Total eggs collected:", farm.collect_eggs())
+    elif choice == "2":
+        name = input("Enter the name of the chicken to remove: ")
+        chicken = farm.get_chicken_by_name(name)
+        if chicken:
+            farm.remove_chicken(chicken)
+            print("Chicken removed successfully.")
+        else:
+            print("Chicken not found.")
 
-print(farm.generate_health_report())
+    elif choice == "3":
+        eggs_collected = farm.collect_eggs()
+        print("Collected {} eggs.".format(eggs_collected))
 
-farm.feed_chickens()
+    elif choice == "4":
+        health_report = farm.generate_health_report()
+        print(health_report)
+
+    elif choice == "5":
+        farm.feed_chickens()
+        print("Chickens have been fed.")
+
+    elif choice == "6":
+        print("Exiting the Farm Management System.")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
