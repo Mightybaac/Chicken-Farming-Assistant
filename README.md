@@ -1,17 +1,17 @@
 # Chicken-Farming-Assistant
 
-# Chicken Farm Management System
+# Farm Management System
 
-This Python program helps chicken farmers manage their flocks by providing functionalities to track and monitor chicken health, egg production, and feeding schedule.
+The Farm Management System is a program that allows you to manage chickens on a farm. It provides functionality to add chickens, remove chickens, collect eggs, generate health reports, and feed the chickens.
 
 ## Features
 
-- Add chickens to the farm
-- Remove chickens from the farm
-- Track egg production
-- Generate health reports for chickens
-- Feed chickens based on time
-- Logging and saving of inputs and outputs
+- Add Chicken: Add a new chicken to the farm by providing its name, breed, and date of birth.
+- Remove Chicken: Remove a chicken from the farm based on its name.
+- Collect Eggs: Collect all the eggs laid by the chickens on the farm and reset the egg count.
+- Generate Health Report: Generate a health report for all the chickens on the farm, including their names, breeds, dates of birth, and health statuses.
+- Feed Chickens: Feed the chickens, updating their health status to "Healthy" during feeding time.
+- Exit: Exit the Farm Management System.
 
 ## Getting Started
 
@@ -19,33 +19,20 @@ This Python program helps chicken farmers manage their flocks by providing funct
 
 - Python 3.x
 
-### Setup
-
-1. Clone the repository or download the `chicken_farm.py` file.
-
-2. (Optional) Create a virtual environment to isolate the project dependencies.
-
-3. Install the required dependencies:
-
-    ```bash
-    pip install datetime
-    ```
-
 ### Usage
 
-1. Open the terminal and navigate to the directory containing the `chicken_farm.py` file.
+1. Clone the repository or download the ZIP file.
+2. Extract the files to your desired location.
+3. Open a terminal or command prompt and navigate to the project directory.
+4. Run the following command to execute the program:
 
-2. Run the program using the following command:
-
-    ```bash
-    python chicken_farm.py
-    ```
-
-3. Follow the on-screen instructions to interact with the chicken farm management system.
-
-4. The program will generate a log file named `farm_log_<date>.log` in the same directory to store the inputs and outputs of the operations performed.
-
+   ```shell
+   python farm.py
+5. Follow the on-screen instructions to interact with the system. Use the provided menu options to add chickens, remove chickens, collect eggs, generate health reports, feed the chickens, or exit the program.
+Customization
+Chicken Breeds: The program supports various chicken breeds by default, such as Rhode Island Red, Plymouth Rock, Buff Orpington, Leghorn, and more. If you wish to modify the existing breeds or add new ones, you can update the code in the Chicken class.
 
 
 
 
+ 
